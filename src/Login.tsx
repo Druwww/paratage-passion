@@ -24,27 +24,30 @@ function Login() {
                 //const credential = GoogleAuthProvider.credentialFromResult(result);
                 //const token = credential.accessToken;
                 // The signed-in user info.
+                // @ts-ignore
                 setUser(result.user);
                 // ...
             }).catch((error) => {
-                // Handle Errors here.
-                //const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                //const email = error.email;
-                // The AuthCredential type that was used.
-                //const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-                console.error(errorMessage)
+            // Handle Errors here.
+            //const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            //const email = error.email;
+            // The AuthCredential type that was used.
+            //const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+            console.error(errorMessage)
         });
     }
-
+    // @ts-ignore
     return (
         <React.Fragment>
-            {user.displayName ?
-                    <Button color="red" onClick={() => auth.signOut().then(() => setUser([null, true, null]))}>{t("Logout")}</Button>
+            {// @ts-ignore
+                user.displayName ?
+                <Button color="red" onClick={() => auth.signOut().then(() => setUser(    // @ts-ignore
+                     [null, true, null]))}>{t("Logout")}</Button>
                 :
-                    <Button onClick={signInWithGoogle}>{t('Login with Google')}</Button>}
+                <Button onClick={signInWithGoogle}>{t('Login with Google')}</Button>}
         </React.Fragment>
     );
 }
