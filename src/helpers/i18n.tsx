@@ -2,8 +2,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import translationEN from './assets/en/translation.json';
-import translationFR from './assets/fr/translation.json';
+import translationEN from '../assets/en/translation.json';
+import translationFR from '../assets/fr/translation.json';
 
 const resources = {
     en: {

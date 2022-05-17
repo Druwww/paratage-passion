@@ -8,7 +8,7 @@ import { Aperture } from 'tabler-icons-react';
 //import Login from "./Login";
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./LanguageSwap";
-import Login from "./Login";
+import Login from "../auth/Login";
 import DarkLightSwitch from "./DarkLightSwitch";
 
 function HeaderBar() {

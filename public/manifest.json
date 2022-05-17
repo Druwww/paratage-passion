@@ -1,19 +1,19 @@
 {
-  "short_name": "SP",
+  "short_name": "Passions",
   "name": "Share your Passion",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "logo64.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logoV2_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logoV2_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

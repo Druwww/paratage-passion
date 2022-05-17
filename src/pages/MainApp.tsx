@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { AppShell, Header, Footer } from '@mantine/core';
-import HeaderBar from "./HeaderBar";
+import HeaderBar from "../components/HeaderBar";
 
 
 

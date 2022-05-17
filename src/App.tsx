@@ -3,7 +3,7 @@ import './App.css';
 
 import {initializeApp} from 'firebase/app';
 import { MantineProvider, ColorSchemeProvider, ColorScheme} from '@mantine/core';
-import MainApp from "./MainApp";
+import MainApp from "./pages/MainApp";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCLbQ7M6BczUd0Uv8gaFkHfvzYO1X7rnvo",
@@ -19,11 +19,11 @@ initializeApp(firebaseConfig);
 
 function App() {
     const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
-    // @ts-ignore
-    const toggleColorScheme = (colorScheme) => setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+    const toggleColorScheme = (value?: ColorScheme) =>
+        setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
     return (
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-            <MantineProvider theme={{ colorScheme }}>
+            <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
                 <div className="App">
 
                     <header>
