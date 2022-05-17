@@ -47,7 +47,7 @@ function Login() {
                 <Button color="red" onClick={() => auth.signOut().then(() => setUser(    // @ts-ignore
                      [null, true, null]))}>{t("Logout")}</Button>
                 :
-                <Button onClick={signInWithGoogle}>{t('Login with Google')}</Button>}
+                <Button onClick={signInWithGoogle}>{t('Login')}</Button>}
         </React.Fragment>
     );
 }

@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { Group, Grid, Text } from '@mantine/core';
+import {Group, Grid, Text, Avatar} from '@mantine/core';
 
-import { Aperture } from 'tabler-icons-react';
-
-//import LanguageSwap from "./LanguageSwap";
-//import Login from "./Login";
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./LanguageSwap";
 import Login from "../auth/Login";
 import DarkLightSwitch from "./DarkLightSwitch";
+
+import pictures from "../assets/pictures/links.json";
 
 function HeaderBar() {
 
@@ -21,10 +19,10 @@ function HeaderBar() {
             <Grid>
                 <Grid.Col span={6}>
                     <Group spacing="xs">
-                        <Aperture
-                            size={48}
-                            strokeWidth={2}
-                            color={'#404abf'}
+                        <Avatar
+                            src={pictures.Logo}
+                            alt="it's me"
+                            size="lg"
                         />
                         <Text
                             component="span"

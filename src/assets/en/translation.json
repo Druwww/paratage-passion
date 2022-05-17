@@ -1,5 +1,7 @@
 {
-  "Login with Google": "Login with Google",
+  "Login": "Login",
   "Logout" : "Logout",
-  "Share your passion" : "Share your passion !"
+  "Share your passion" : "Share your passion !",
+  "Title Main Page" : "Share Passions",
+  "Welcome Text" : "Hello ! Welcome on the main page. The site is under construction, come back later !"
 }

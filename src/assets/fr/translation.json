@@ -1,5 +1,7 @@
 {
-  "Login with Google": "Connecter avec Google",
+  "Login": "Connection",
   "Logout" : "Deconnexion",
-  "Share your passion" : "Partage ta passion !"
+  "Share your passion" : "Partage ta passion !",
+  "Title Main Page" : "Partage Passions",
+  "Welcome Text" : "Bonjour ! Bienvenue sur la page principal. Le site est actuellement en cours de construction, n'hésitez pas à revenir plus tard !"
 }
