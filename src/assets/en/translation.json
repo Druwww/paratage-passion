@@ -3,5 +3,8 @@
   "Logout" : "Logout",
   "Share your passion" : "Share your passion !",
   "Title Main Page" : "Share Passions",
-  "Welcome Text" : "Hello ! Welcome on the main page. The site is under construction, come back later !"
+  "Welcome Text" : "Hello ! Welcome on the main page. The site is under construction, come back later !",
+  "Buttons" : {
+    "Navigation_Main" : "Main"
+  }
 }

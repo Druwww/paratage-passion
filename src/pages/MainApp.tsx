@@ -4,6 +4,9 @@ import React from 'react';
 import {AppShell, Header, Footer, Title, Space} from '@mantine/core';
 import HeaderBar from "../components/HeaderBar";
 import {useTranslation} from "react-i18next";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Welcome from "./Welcome";
+import Map from "./Map";
 
 
 function MainApp() {
@@ -23,10 +26,11 @@ function MainApp() {
                     main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
                 })}
             >
-                <Title order={1}>{t("Welcome Text")}</Title>
-                <Space h="xl" />
-                <iframe src="https://giphy.com/embed/JIX9t2j0ZTN9S" width="480" height="480" frameBorder="0"
-                        className="giphy-embed" allowFullScreen></iframe>
+
+                <Routes>
+                    <Route path="/" element={<Welcome />}/>
+                    <Route path="map" element={<Map />}/>
+                </Routes>
 
             </AppShell>
         </React.Fragment>

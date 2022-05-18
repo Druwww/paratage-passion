@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Group, Grid, Text, Avatar} from '@mantine/core';
+import {Group, Grid, Text, Avatar, Space} from '@mantine/core';
 
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./LanguageSwap";
@@ -8,6 +8,7 @@ import Login from "../auth/Login";
 import DarkLightSwitch from "./DarkLightSwitch";
 
 import pictures from "../assets/pictures/links.json";
+import ButtonNavigation from "./ButtonNavigation";
 
 function HeaderBar() {
 
@@ -35,6 +36,8 @@ function HeaderBar() {
                         >
                             {t("Share your passion")}
                         </Text>
+                        <Space h="xl" />
+                        <ButtonNavigation name={"Buttons.Navigation_Main"} path={"/"}/>
                     </Group>
                 </Grid.Col>
                 <Grid.Col span={6}>
