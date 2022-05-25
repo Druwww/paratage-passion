@@ -37,7 +37,6 @@ function HeaderBar() {
                             {t("Share your passion")}
                         </Text>
                         <Space h="xl" />
-                        <ButtonNavigation name={"Buttons.Navigation_Main"} path={"/"}/>
                     </Group>
                 </Grid.Col>
                 <Grid.Col span={6}>

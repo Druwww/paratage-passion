@@ -6,5 +6,13 @@
   "Welcome Text" : "Bonjour ! Bienvenue sur la page principal. Le site est actuellement en cours de construction, n'hésitez pas à revenir plus tard !",
   "Buttons" : {
     "Navigation_Main" : "Acceuil"
+  },
+  "Welcome" : {
+    "Adventurer": {
+      "List1" : [
+        "Tu avais une passion plus jeune",
+        "Tu ne sais pas quoi faire de tes soirées"
+      ]
+    }
   }
 }

@@ -6,5 +6,13 @@
   "Welcome Text" : "Hello ! Welcome on the main page. The site is under construction, come back later !",
   "Buttons" : {
     "Navigation_Main" : "Main"
+  },
+  "Welcome" : {
+    "Adventurer": {
+      "List1" : [
+        "Younger, you had a hobby",
+        "You don't know what to do on your evenings"
+      ]
+    }
   }
 }
