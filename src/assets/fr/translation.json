@@ -10,8 +10,48 @@
   "Welcome" : {
     "Adventurer": {
       "List1" : [
-        "Tu avais une passion plus jeune",
-        "Tu ne sais pas quoi faire de tes soirées"
+        "Tu avais des passions étant plus jeune ?",
+        "Tu adores découvir des nouvelles activités ?",
+        "Tu sais t'amuser en apprenant ?",
+        "Tu adores pratiquer une activité en dehors du travail ?",
+        "Tu n'as pas peur de rencontrer de nouvelles personnes ?"
+      ],
+      "List2" : [
+        "Mais aujourd'hui tu n'as pas retrouvé de passion qui t'anime",
+        "Mais tu ne sais pas par où commencer",
+        "Mais tu te retrouves noyer sous les informations",
+        "Mais  n'as pas envie de depenser trop de sous"
+      ],
+      "Question1" : "Alors qui de mieux qu'un(e) passioné(e) pour répondre à tous ça ?"
+    },
+    "Passionate": {
+      "List1" : [
+        "Tu as une passion qui t'anime ?",
+        "Tu adores partager ton expérience et ton savoir faire ?",
+        "Tu ne compte plus les heures quand tu pratique ta passion ?",
+        "Tu es aussi bien flexible que régulier sur ton planning ?",
+        "Tu aimes bien rencontrer de nouvelles personne autour de ta passion ?"
+      ],
+      "List2" : [
+        "Mais tu te sens parfois un peu seul ou tu as fait le tour des rencontres possible",
+        "Mais tes amies s'ennuient quand tu leur parle de ta passion",
+        "Mais tu n'as pas envie que d'autre personnes tombe dans les même pièges que toi",
+        "Mais c'est difficile de rencontrer des personnes de confiance autour de sa passion"
+      ],
+      "Question1" : "Alors qui de mieux qu'un(e) aventurié(ière) pour répondre à tous ça ?",
+      "TimeLine1" : [
+        {
+          "title" : "je suis un titre",
+          "text" : "je suis le text"
+        },
+        {
+          "title" : "je suis un titre",
+          "text" : "je suis le text"
+        },
+        {
+          "title" : "je suis un titre",
+          "text" : "je suis le text"
+        }
       ]
     }
   }

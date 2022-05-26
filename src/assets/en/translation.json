@@ -10,8 +10,48 @@
   "Welcome" : {
     "Adventurer": {
       "List1" : [
-        "Younger, you had a hobby",
-        "You don't know what to do on your evenings"
+        "Did you had a hobby younger ?",
+        "Do you like discover new activities ?",
+        "Do you have some fun by learning ?",
+        "Do you like practice atfer or beside work ?",
+        "Are you not affraid to meet new people ?"
+      ],
+      "List2" : [
+        "But today you didn't find your new spark",
+        "But you don't know where to start",
+        "But you are loose under all the informations on internet",
+        "But you don't want to spent to much money on it"
+      ],
+      "Question1" : "So who is better than a passionate to fit all of those ?"
+    },
+    "Passionate": {
+      "List1" : [
+        "Do you have a hobby ?",
+        "Do you like to share your experience and your knowledge ?",
+        "Do you lose perception of time when doing your hobby ?",
+        "Are you flexible as well as regular on your schedule ?",
+        "Do you like to meet new people around your hobby ?"
+      ],
+      "List2" : [
+        "But sometimes you feel a bit lonely or you've done the rounds of possible meetings",
+        "But your friends get bored when you tell them about your passion",
+        "But you don't want other people to fall into the same traps as you",
+        "But it's hard to meet new people you can trust around your passion"
+      ],
+      "Question1" : "So who is better than a adventurer to fit all of those ?",
+      "TimeLine1" : [
+        {
+          "title" : "I am a Title",
+          "text" : "I am just Text"
+        },
+        {
+          "title" : "I am a Title",
+          "text" : "I am just Text"
+        },
+        {
+          "title" : "I am a Title",
+          "text" : "I am just Text"
+        }
       ]
     }
   }

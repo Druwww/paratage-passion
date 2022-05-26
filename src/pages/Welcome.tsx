@@ -1,16 +1,17 @@
 import React from 'react';
 
-import {Divider, Grid, Text, Image, Title, Space} from "@mantine/core";
+import {Divider, Grid, Image, Title, Space} from "@mantine/core";
 import PaperTextWelcome from "../components/PaperTextWelcome";
 import pictures from "../assets/pictures/links.json";
 import {useTranslation} from "react-i18next";
 import PaperListWelcome from "../components/PaperListWelcome";
+import PaperTimelineWelcome from "../components/PaperTimeLineWelcome";
 
 function Welcome() {
 
     const {t} = useTranslation();
 
-    console.log(t("Welcome.Adventurer.List1", { returnObjects: true }))
+    console.log(t("Welcome.Passionate.TimeLine1"))
 
     return (
         <React.Fragment>
@@ -19,7 +20,7 @@ function Welcome() {
                 <Grid.Col span={9}>
                     <PaperTextWelcome data={"AVENTURIER"}/>
                     <Space h="md"/>
-                    <Grid>
+                    <Grid align="center">
                         <Grid.Col span={4}>
                             <Image
                                 radius="md"
@@ -32,9 +33,9 @@ function Welcome() {
                         </Grid.Col>
                     </Grid>
                     <Space h="md"/>
-                    <Grid>
+                    <Grid align="center">
                         <Grid.Col span={8}>
-                            <PaperTextWelcome data={"TEXT EXEMPLE"}/>
+                            <PaperListWelcome data={t("Welcome.Adventurer.List2", { returnObjects: true })}/>
                         </Grid.Col>
                         <Grid.Col span={4}>
                             <Image
@@ -51,9 +52,9 @@ function Welcome() {
                 <Grid.Col span={9}>
                     <PaperTextWelcome data={"PASSIONNE"}/>
                     <Space h="md"/>
-                    <Grid>
+                    <Grid align="center">
                         <Grid.Col span={8}>
-                            <PaperTextWelcome data={"TEXT EXEMPLE"}/>
+                            <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
                         </Grid.Col>
                         <Grid.Col span={4}>
                             <Image
@@ -64,7 +65,7 @@ function Welcome() {
                         </Grid.Col>
                     </Grid>
                     <Space h="md"/>
-                    <Grid>
+                    <Grid align="center">
                         <Grid.Col span={4}>
                             <Image
                                 radius="md"
@@ -73,9 +74,41 @@ function Welcome() {
                             />
                         </Grid.Col>
                         <Grid.Col span={8}>
-                            <PaperTextWelcome data={"TEXT EXEMPLE"}/>
+                            <PaperListWelcome data={t("Welcome.Passionate.List2", { returnObjects: true })}/>
                         </Grid.Col>
                     </Grid>
+                </Grid.Col>
+            </Grid>
+
+            <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={9}>
+                    <PaperTextWelcome data={t("Welcome.Adventurer.Question1")}/>
+                </Grid.Col>
+                <Grid.Col span={1}>
+                    <Image
+                        radius="md"
+                        src={pictures.Handshake}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+                <Grid.Col span={9}>
+                    <PaperTextWelcome data={t("Welcome.Passionate.Question1")}/>
+                </Grid.Col>
+            </Grid>
+
+            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={8}>
+                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })}/>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                    <Image
+                        radius="md"
+                        src={pictures.Aventurier}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+                <Grid.Col span={8}>
+                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} reverse/>
                 </Grid.Col>
             </Grid>
         </React.Fragment>
