@@ -1,16 +1,13 @@
 import React from 'react';
 
-import {AppShell, Header, Footer, Title, Space} from '@mantine/core';
+import {AppShell, Header, Footer} from '@mantine/core';
 import HeaderBar from "../components/HeaderBar";
-import {useTranslation} from "react-i18next";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Welcome from "./Welcome";
 import Map from "./Map";
 
 
 function MainApp() {
-
-    const { t } = useTranslation();
 
     return (
         <React.Fragment>

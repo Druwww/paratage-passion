@@ -15,7 +15,12 @@ function Welcome() {
 
     return (
         <React.Fragment>
+
             <Title order={3}>Question 1</Title>
+
+            {
+                //Line 1-2-3
+            }
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })}>
                 <Grid.Col span={9}>
                     <PaperTextWelcome data={"AVENTURIER"}/>
@@ -80,6 +85,9 @@ function Welcome() {
                 </Grid.Col>
             </Grid>
 
+            {
+                //Line 4
+            }
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={9}>
                     <PaperTextWelcome data={t("Welcome.Adventurer.Question1")}/>
@@ -96,6 +104,9 @@ function Welcome() {
                 </Grid.Col>
             </Grid>
 
+            {
+                //Line 5
+            }
             <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={8}>
                     <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })}/>
@@ -111,6 +122,71 @@ function Welcome() {
                     <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} reverse/>
                 </Grid.Col>
             </Grid>
+
+            {
+                //Line 3
+            }
+            <Grid columns={16} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={4}>
+                    <Image
+                        radius="md"
+                        src={pictures.Aventurier}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+                <Grid.Col  span={8}>
+                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} />
+                </Grid.Col>
+                <Grid.Col span={4}>
+                    <Image
+                        radius="md"
+                        src={pictures.Aventurier}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+            </Grid>
+
+
+
+            {
+                //Line 6
+            }
+            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={8}>
+                    <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                    <Image
+                        radius="md"
+                        src={pictures.Aventurier}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+                <Grid.Col span={8}>
+                    <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
+                </Grid.Col>
+            </Grid>
+
+            {
+                //Line 7
+            }
+            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={8}>
+                    <PaperTextWelcome data="FORMULAIRE AVENTURIER"/>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                    <Image
+                        radius="md"
+                        src={pictures.Aventurier}
+                        alt="Random unsplash image"
+                    />
+                </Grid.Col>
+                <Grid.Col span={8}>
+                    <PaperTextWelcome data="FORMULAIRE PASSIONNE"/>
+                </Grid.Col>
+            </Grid>
+
+
         </React.Fragment>
     );
 }
