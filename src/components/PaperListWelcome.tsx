@@ -1,9 +1,8 @@
-// @ts-ignore
 import React from 'react';
-import {List, Paper, Text} from "@mantine/core";
+import {List, Paper} from "@mantine/core";
 
 interface PaperListWelcomeParams {
-    data : []
+    data : string[]
 }
 
 function PaperListWelcome(props:PaperListWelcomeParams) {

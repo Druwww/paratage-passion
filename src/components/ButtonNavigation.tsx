@@ -1,12 +1,15 @@
-// @ts-ignore
 import React from 'react';
 
 import {Button} from '@mantine/core';
 import {useTranslation} from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-// @ts-ignore
-function BouttonNavigation(props) {
+interface ButtonNavigationParams {
+    name : string,
+    path : string
+}
+
+function ButtonNavigation(props: ButtonNavigationParams) {
 
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -20,4 +23,4 @@ function BouttonNavigation(props) {
     );
 }
 
-export default BouttonNavigation;
+export default ButtonNavigation;

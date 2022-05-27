@@ -1,4 +1,3 @@
-// @ts-ignore
 import React from 'react';
 
 import {AppShell, Header, Footer, Title, Space} from '@mantine/core';
