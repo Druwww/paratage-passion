@@ -6,12 +6,11 @@ import pictures from "../assets/pictures/links.json";
 import {useTranslation} from "react-i18next";
 import PaperListWelcome from "../components/PaperListWelcome";
 import PaperTimelineWelcome from "../components/PaperTimeLineWelcome";
+import FormWelcome from "../components/FormWelcome";
 
 function Welcome() {
 
     const {t} = useTranslation();
-
-    console.log(t("Welcome.Passionate.TimeLine1"))
 
     return (
         <React.Fragment>
@@ -172,7 +171,7 @@ function Welcome() {
             }
             <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={8}>
-                    <PaperTextWelcome data="FORMULAIRE AVENTURIER"/>
+                    <FormWelcome form={t("Welcome.Form.Interest.QuestionA",{ returnObjects: true })} isPassionate={false}/>
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Image
@@ -182,7 +181,7 @@ function Welcome() {
                     />
                 </Grid.Col>
                 <Grid.Col span={8}>
-                    <PaperTextWelcome data="FORMULAIRE PASSIONNE"/>
+                    <FormWelcome form={t("Welcome.Form.Interest.QuestionA", { returnObjects: true })} isPassionate={false}/>
                 </Grid.Col>
             </Grid>
 

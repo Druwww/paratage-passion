@@ -53,6 +53,24 @@
           "text" : "I am just Text"
         }
       ]
+    },
+    "Form" : {
+      "Interest" : {
+        "QuestionP" : {
+          "Title" : "Are you interest as a passionate ? Yes, show it but entering your email address !",
+          "Email" : "Email",
+          "ErrorEmail" : "invalid email",
+          "Checkbox" : "Subscribe to the project's newsletter ?",
+          "Validation" : "Submit"
+        },
+        "QuestionA" : {
+          "Title" : "Are you interest as an adventurer ? Yes, show it but entering your email address !",
+          "Email" : "Email",
+          "ErrorEmail" : "invalid email",
+          "Checkbox" : "Subscribe to the project's newsletter ?",
+          "Validation" : "Submit"
+        }
+      }
     }
   }
 }

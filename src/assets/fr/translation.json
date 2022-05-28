@@ -55,7 +55,22 @@
       ]
     },
     "Form" : {
-
+      "Interest" : {
+        "QuestionP" : {
+          "Title" : "Tu es interessé par le concept en tant que Passionné ? Si oui, montre le en rentrant ton adresse mail !",
+          "Email" : "Email",
+          "ErrorEmail" : "email invalide",
+          "Checkbox" : "Tu veux recevoir des info lettre sur l'avancé du projet par email ?",
+          "Validation" : "Envoyer"
+        },
+        "QuestionA" : {
+          "Title" : "Tu es interessé par le concept en tant qu'Aventurier ? Si oui, montre le en rentrant ton adresse mail !",
+          "Email" : "Email",
+          "ErrorEmail" : "email invalide",
+          "Checkbox" : "Tu veux recevoir des info lettre sur l'avancé du projet par email ?",
+          "Validation" : "Envoyer"
+        }
+      }
     }
   }
 }
