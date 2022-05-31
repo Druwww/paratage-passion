@@ -4,11 +4,9 @@ import {Group, Grid, Text, Avatar, Space} from '@mantine/core';
 
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./LanguageSwap";
-import Login from "../auth/Login";
 import DarkLightSwitch from "./DarkLightSwitch";
 
 import pictures from "../assets/pictures/links.json";
-import ButtonNavigation from "./ButtonNavigation";
 
 function HeaderBar() {
 
@@ -16,10 +14,9 @@ function HeaderBar() {
 
     return (
         <React.Fragment>
-
-            <Grid>
-                <Grid.Col span={6}>
-                    <Group spacing="xs">
+            <Grid justify="space-between">
+                <Grid.Col span={3}>
+                    <Group spacing="xs" position="left">
                         <Avatar
                             src={pictures.Logo}
                             alt="it's me"
@@ -39,11 +36,10 @@ function HeaderBar() {
                         <Space h="xl" />
                     </Group>
                 </Grid.Col>
-                <Grid.Col span={6}>
-                    <Group spacing="xs" position="right">
+                <Grid.Col span={3}>
+                    <Group spacing="xs" p="xs" position="right">
                         <DarkLightSwitch />
                         <LanguageSwap />
-                        <Login />
                     </Group>
                 </Grid.Col>
             </Grid>

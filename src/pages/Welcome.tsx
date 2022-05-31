@@ -1,28 +1,29 @@
 import React from 'react';
 
-import {Divider, Grid, Image, Title, Space} from "@mantine/core";
+import {Divider, Grid, Image, Title, Space, Center, useMantineTheme} from "@mantine/core";
 import PaperTextWelcome from "../components/PaperTextWelcome";
 import pictures from "../assets/pictures/links.json";
 import {useTranslation} from "react-i18next";
-import PaperListWelcome from "../components/PaperListWelcome";
-import PaperTimelineWelcome from "../components/PaperTimeLineWelcome";
+import ListWelcome from "../components/ListWelcome";
+import TimeLineWelcome from "../components/TimeLineWelcome";
 import FormWelcome from "../components/FormWelcome";
 
 function Welcome() {
 
     const {t} = useTranslation();
+    const theme = useMantineTheme();
 
     return (
         <React.Fragment>
 
-            <Title order={3}>Question 1</Title>
+            <Title order={3}>{t("Welcome.Question1")}</Title>
 
             {
                 //Line 1-2-3
             }
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })}>
                 <Grid.Col span={9}>
-                    <PaperTextWelcome data={"AVENTURIER"}/>
+                    <PaperTextWelcome data={t("Welcome.TitleA")} color="#FA5252"/>
                     <Space h="md"/>
                     <Grid align="center">
                         <Grid.Col span={4}>
@@ -33,13 +34,13 @@ function Welcome() {
                             />
                         </Grid.Col>
                         <Grid.Col span={8}>
-                            <PaperListWelcome data={t("Welcome.Adventurer.List1", { returnObjects: true })}/>
+                            <ListWelcome data={t("Welcome.Adventurer.List1", { returnObjects: true })}/>
                         </Grid.Col>
                     </Grid>
                     <Space h="md"/>
                     <Grid align="center">
                         <Grid.Col span={8}>
-                            <PaperListWelcome data={t("Welcome.Adventurer.List2", { returnObjects: true })}/>
+                            <ListWelcome data={t("Welcome.Adventurer.List2", { returnObjects: true })}/>
                         </Grid.Col>
                         <Grid.Col span={4}>
                             <Image
@@ -51,14 +52,14 @@ function Welcome() {
                     </Grid>
                 </Grid.Col>
                 <Grid.Col span={1}>
-                    <Divider ml="xl" size="lg" variant="dashed" orientation="vertical"/>
+                        <Divider ml="xl" size="lg" variant="dashed" orientation="vertical"/>
                 </Grid.Col>
                 <Grid.Col span={9}>
-                    <PaperTextWelcome data={"PASSIONNE"}/>
+                    <PaperTextWelcome data={t("Welcome.TitleP")} color="#228BE6"/>
                     <Space h="md"/>
                     <Grid align="center">
                         <Grid.Col span={8}>
-                            <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
+                            <ListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
                         </Grid.Col>
                         <Grid.Col span={4}>
                             <Image
@@ -78,7 +79,7 @@ function Welcome() {
                             />
                         </Grid.Col>
                         <Grid.Col span={8}>
-                            <PaperListWelcome data={t("Welcome.Passionate.List2", { returnObjects: true })}/>
+                            <ListWelcome data={t("Welcome.Passionate.List2", { returnObjects: true })}/>
                         </Grid.Col>
                     </Grid>
                 </Grid.Col>
@@ -106,9 +107,9 @@ function Welcome() {
             {
                 //Line 5
             }
-            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center" >
                 <Grid.Col span={8}>
-                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })}/>
+                    <TimeLineWelcome color="red" data={t("Welcome.Adventurer.TimeLine1",{ returnObjects: true })}/>
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Image
@@ -118,12 +119,12 @@ function Welcome() {
                     />
                 </Grid.Col>
                 <Grid.Col span={8}>
-                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} reverse/>
+                    <TimeLineWelcome color="blue" data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} reverse/>
                 </Grid.Col>
             </Grid>
 
             {
-                //Line 3
+                //Line 6
             }
             <Grid columns={16} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={4}>
@@ -134,7 +135,7 @@ function Welcome() {
                     />
                 </Grid.Col>
                 <Grid.Col  span={8}>
-                    <PaperTimelineWelcome data={t("Welcome.Passionate.TimeLine1",{ returnObjects: true })} />
+                    <TimeLineWelcome data={t("Welcome.TimeLine1",{ returnObjects: true })} />
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Image
@@ -152,7 +153,9 @@ function Welcome() {
             }
             <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={8}>
-                    <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
+                    <Center>
+                        <ListWelcome data={t("Welcome.Adventurer.List3", { returnObjects: true })}/>
+                    </Center>
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Image
@@ -162,16 +165,18 @@ function Welcome() {
                     />
                 </Grid.Col>
                 <Grid.Col span={8}>
-                    <PaperListWelcome data={t("Welcome.Passionate.List1", { returnObjects: true })}/>
+                    <Center>
+                        <ListWelcome data={t("Welcome.Passionate.List3", { returnObjects: true })}/>
+                    </Center>
                 </Grid.Col>
             </Grid>
 
             {
                 //Line 7
             }
-            <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
-                <Grid.Col span={8}>
-                    <FormWelcome form={t("Welcome.Form.Interest.QuestionA",{ returnObjects: true })} isPassionate={false}/>
+            <Grid justify="space-around" columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
+                <Grid.Col span={6}>
+                    <FormWelcome color={theme.colors.red[6]} form={t("Welcome.Form.Interest.QuestionA",{ returnObjects: true })} isPassionate={false}/>
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Image
@@ -180,8 +185,8 @@ function Welcome() {
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
-                <Grid.Col span={8}>
-                    <FormWelcome form={t("Welcome.Form.Interest.QuestionA", { returnObjects: true })} isPassionate={false}/>
+                <Grid.Col span={6}>
+                        <FormWelcome color={theme.colors.blue[6]} form={t("Welcome.Form.Interest.QuestionP", { returnObjects: true })} isPassionate={true}/>
                 </Grid.Col>
             </Grid>
 

@@ -8,6 +8,9 @@
     "Navigation_Main" : "Acceuil"
   },
   "Welcome" : {
+    "Question1" : "Es-tu plutôt un(e)...",
+    "TitleA" : "Aventurier",
+    "TitleP" : "Passionné",
     "Adventurer": {
       "List1" : [
         "Tu avais des passions étant plus jeune ?",
@@ -22,15 +25,35 @@
         "Mais tu te retrouves noyer sous les informations",
         "Mais  n'as pas envie de depenser trop de sous"
       ],
-      "Question1" : "Alors qui de mieux qu'un(e) passioné(e) pour répondre à tous ça ?"
+      "Question1" : "Alors qui de mieux qu'un(e) passioné(e) pour répondre à tous ça ?",
+      "TimeLine1" : [
+        {
+          "title" : "La localisation",
+          "text" : "Rentre ton code postal pour définir ta zone de recherche"
+        },
+        {
+          "title" : "Filtre, Compare",
+          "text" : "Choisis tes préférences, regardes les différents mur de passionnés"
+        },
+        {
+          "title" : "Envoie ton premier message",
+          "text" : "Une fois ton passionné choisis, créer ton compte et envoie ton premier message"
+        }
+      ],
+      "List3" : [
+        "Tu as une meilleure idée sur le fonctionnement de la passion",
+        "Tu sais par où commencer et en connaissant quelqu'un",
+        "Tu as payé uniquement le strict minimum",
+        "Tu as une meilleure idée si tu veux te lancer la dedans !"
+      ]
     },
     "Passionate": {
       "List1" : [
         "Tu as une passion qui t'anime ?",
         "Tu adores partager ton expérience et ton savoir faire ?",
-        "Tu ne compte plus les heures quand tu pratique ta passion ?",
+        "Tu ne regardes plus le temps tu pratiques ta passion ?",
         "Tu es aussi bien flexible que régulier sur ton planning ?",
-        "Tu aimes bien rencontrer de nouvelles personne autour de ta passion ?"
+        "Tu aimes rencontrer de nouvelles personne  ?"
       ],
       "List2" : [
         "Mais tu te sens parfois un peu seul ou tu as fait le tour des rencontres possible",
@@ -41,33 +64,61 @@
       "Question1" : "Alors qui de mieux qu'un(e) aventurié(ière) pour répondre à tous ça ?",
       "TimeLine1" : [
         {
-          "title" : "je suis un titre",
-          "text" : "je suis le text"
+          "title" : "Bienvenue",
+          "text" : "Créer ton compte sur la plateforme"
         },
         {
-          "title" : "je suis un titre",
-          "text" : "je suis le text"
+          "title" : "Exprime toi",
+          "text" : "Créer ton mur de ta passion, met y du texte, des images, des vidéos afin de partager ton savoir faire"
         },
         {
-          "title" : "je suis un titre",
-          "text" : "je suis le text"
+          "title" : "Défini tes préferences",
+          "text" : "Définie ton rythme, tes notifications et le type de rencontres que tu préfères faire"
         }
+      ],
+      "List3" : [
+        "Tu as rencontré de potentiel futur passionnés",
+        "Tu as partagé ta passion et ton expérience à sa juste valeur",
+        "Tu as des nouveaux contacts et ami(e)s",
+        "Et cela n'a ta coûté que du temps !"
       ]
     },
+    "TimeLine1" : [
+      {
+        "title" : "Discuter",
+        "text" : "Discuter autour de l'experience du passionné et de la pssion, posez des questions/répondez"
+      },
+      {
+        "title" : "Rencontre virtuel",
+        "text" : "Si vous le voulez, faite une rencontre virtuel sur différents support possible"
+      },
+      {
+        "title" : "Préparez la rencontre",
+        "text" : "Le passionné peut proposer une rencontre quand il est prêt avec toutes les information nessesaire : le lieu, l'heure... L'aventurier peur accepter ou proposer des modifications"
+      },
+      {
+        "title" : "Passer un bon moment",
+        "text" : "Fait la rencontre, découvrez le passionné et la passion"
+      },
+      {
+        "title" : "Retour d'expérience",
+        "text" : "Après la rencontre, donnez un avis sur l'expérience afin de partager à quel point vous avez apprécié la rencontre"
+      }
+    ],
     "Form" : {
       "Interest" : {
         "QuestionP" : {
-          "Title" : "Tu es interessé par le concept en tant que Passionné ? Si oui, montre le en rentrant ton adresse mail !",
+          "Title" : "Interessé ? Abonne toi en tant que Passionné",
           "Email" : "Email",
           "ErrorEmail" : "email invalide",
-          "Checkbox" : "Tu veux recevoir des info lettre sur l'avancé du projet par email ?",
+          "Checkbox" : "Recevoir l'infolettre du projet\"",
           "Validation" : "Envoyer"
         },
         "QuestionA" : {
-          "Title" : "Tu es interessé par le concept en tant qu'Aventurier ? Si oui, montre le en rentrant ton adresse mail !",
+          "Title" : "Interessé ? Abonne toi en tant qu'Aventurier",
           "Email" : "Email",
           "ErrorEmail" : "email invalide",
-          "Checkbox" : "Tu veux recevoir des info lettre sur l'avancé du projet par email ?",
+          "Checkbox" : "Recevoir l'infolettre du projet",
           "Validation" : "Envoyer"
         }
       }

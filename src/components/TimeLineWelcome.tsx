@@ -1,20 +1,21 @@
 import React from 'react';
-import {Paper, Text, Timeline} from "@mantine/core";
+import {Center, Text, Timeline} from "@mantine/core";
 
-interface PaperTimelineWelcomeParams {
+interface TimelineWelcomeParams {
     data : {
         title : string,
         text : string
     }[],
-    reverse? : true
+    reverse? : true,
+    color? : string
 }
 
-function PaperTimelineWelcome(props:PaperTimelineWelcomeParams) {
+function TimeLineWelcome(props:TimelineWelcomeParams) {
 
     return (
         <React.Fragment>
-            <Paper shadow="sm" p="md">
-                <Timeline color="indigo" align={props.reverse ? "right" : "left"}>
+            <Center>
+                <Timeline color={props.color ? props.color : "grape"} align={props.reverse ? "right" : "left"} active={props.data.length}>
                     {props.data.map((elem, num) =>
                         <Timeline.Item title={elem.title} bulletSize={24}>
                             <Text color="dimmed" size="sm">
@@ -23,9 +24,9 @@ function PaperTimelineWelcome(props:PaperTimelineWelcomeParams) {
                         </Timeline.Item>
                     )}
                 </Timeline>
-            </Paper>
+            </Center>
         </React.Fragment>
     );
 }
 
-export default PaperTimelineWelcome;
+export default TimeLineWelcome;

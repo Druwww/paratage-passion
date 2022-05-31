@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import React from 'react';
-import {Box, Button, Checkbox, Group, TextInput} from "@mantine/core";
+import {Box, Button, Checkbox, Group, MantineColor, Paper, TextInput} from "@mantine/core";
 import {useForm} from "@mantine/form";
 
 interface FormWelcomeParams {
@@ -11,7 +11,8 @@ interface FormWelcomeParams {
         Checkbox : string,
         Validation : string,
     }
-    isPassionate : boolean
+    isPassionate : boolean,
+    color? : MantineColor
 }
 
 
@@ -30,26 +31,35 @@ function FormWelcome(props:FormWelcomeParams) {
 
     return (
         <React.Fragment>
-            <Box sx={{ maxWidth: 300 }} mx="auto">
-                <form onSubmit={form.onSubmit((values) => console.log(values, (props.isPassionate ? "Passionate" : "Adventurer")))}>
-                    <TextInput
-                        required
-                        label={props.form.Title}
-                        placeholder={props.form.Email}
-                        {...form.getInputProps('email')}
-                    />
+            <Paper
+                p="md"
+                withBorder={true}
+                sx={(theme) => ({
+                    borderColor:props.color,
+                    backgroundColor:theme.colors.gray[0]
+                })}
+            >
+                <Box sx={{ maxWidth: 300 }} mx="auto" style={{textAlign:"left"}}>
+                    <form onSubmit={form.onSubmit((values) => console.log(values, (props.isPassionate ? "Passionate" : "Adventurer")))}>
+                        <TextInput
+                            required
+                            label={props.form.Title}
+                            placeholder={props.form.Email}
+                            {...form.getInputProps('email')}
+                        />
 
-                    <Checkbox
-                        mt="md"
-                        label={props.form.Checkbox}
-                        {...form.getInputProps('newsLetter', { type: 'checkbox' })}
-                    />
+                        <Checkbox
+                            mt="md"
+                            label={props.form.Checkbox}
+                            {...form.getInputProps('newsLetter', { type: 'checkbox' })}
+                        />
 
-                    <Group position="right" mt="md">
-                        <Button type="submit">{props.form.Validation}</Button>
-                    </Group>
-                </form>
-            </Box>
+                        <Group position="right" mt="md">
+                            <Button type="submit">{props.form.Validation}</Button>
+                        </Group>
+                    </form>
+                </Box>
+            </Paper>
         </React.Fragment>
     );
 }

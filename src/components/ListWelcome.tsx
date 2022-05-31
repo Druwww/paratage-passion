@@ -1,25 +1,24 @@
 import React from 'react';
-import {List, Paper} from "@mantine/core";
+import {List} from "@mantine/core";
 
-interface PaperListWelcomeParams {
+interface ListWelcomeParams {
     data : string[]
 }
 
-function PaperListWelcome(props:PaperListWelcomeParams) {
+function ListWelcome(props:ListWelcomeParams) {
 
     return (
         <React.Fragment>
-            <Paper style={{textAlign:"left"}} shadow="sm" p="md">
-                <List>
+
+                <List style={{textAlign:"left"}}>
                     {props.data.map(elem =>
                         <List.Item>
                                 {elem}
                         </List.Item>
                     )}
                 </List>
-            </Paper>
         </React.Fragment>
     );
 }
 
-export default PaperListWelcome;
+export default ListWelcome;
