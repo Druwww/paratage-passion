@@ -21,6 +21,6 @@ i18n
         interpolation: {
             escapeValue: false // react already safes from xss
         }
-    }).then(() => console.log("i18n initialise :D"));
+    }).then();
 
 export default i18n;

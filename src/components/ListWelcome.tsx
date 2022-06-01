@@ -11,8 +11,8 @@ function ListWelcome(props:ListWelcomeParams) {
         <React.Fragment>
 
                 <List style={{textAlign:"left"}}>
-                    {props.data.map(elem =>
-                        <List.Item>
+                    {props.data.map((elem, num) =>
+                        <List.Item key={elem + num}>
                                 {elem}
                         </List.Item>
                     )}

@@ -17,7 +17,7 @@ function TimeLineWelcome(props:TimelineWelcomeParams) {
             <Center>
                 <Timeline color={props.color ? props.color : "grape"} align={props.reverse ? "right" : "left"} active={props.data.length}>
                     {props.data.map((elem, num) =>
-                        <Timeline.Item title={elem.title} bulletSize={24}>
+                        <Timeline.Item title={elem.title} bulletSize={24} key={elem.title + num}>
                             <Text color="dimmed" size="sm">
                                 {elem.text}
                             </Text>
