@@ -10,7 +10,7 @@ function ListWelcome(props:ListWelcomeParams) {
     return (
         <React.Fragment>
 
-                <List style={{textAlign:"left"}}>
+                <List style={{textAlign:"left"}} size="lg" withPadding>
                     {props.data.map((elem, num) =>
                         <List.Item key={elem + num}>
                                 {elem}

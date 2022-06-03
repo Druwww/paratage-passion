@@ -18,12 +18,9 @@ function Welcome() {
 
             <Title order={3}>{t("Welcome.Question1")}</Title>
 
-            {
-                //Line 1-2-3
-            }
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })}>
                 <Grid.Col span={9}>
-                    <PaperTextWelcome data={t("Welcome.TitleA")} color="#FA5252"/>
+                    <PaperTextWelcome data={t("Welcome.TitleA")} color={theme.colors.red[6]}/>
                     <Space h="md"/>
                     <Grid align="center">
                         <Grid.Col span={4}>
@@ -37,25 +34,12 @@ function Welcome() {
                             <ListWelcome data={t("Welcome.Adventurer.List1", { returnObjects: true })}/>
                         </Grid.Col>
                     </Grid>
-                    <Space h="md"/>
-                    <Grid align="center">
-                        <Grid.Col span={8}>
-                            <ListWelcome data={t("Welcome.Adventurer.List2", { returnObjects: true })}/>
-                        </Grid.Col>
-                        <Grid.Col span={4}>
-                            <Image
-                                radius="md"
-                                src={pictures.Aventurier}
-                                alt="Random unsplash image"
-                            />
-                        </Grid.Col>
-                    </Grid>
                 </Grid.Col>
                 <Grid.Col span={1}>
                         <Divider ml="xl" size="lg" variant="dashed" orientation="vertical"/>
                 </Grid.Col>
                 <Grid.Col span={9}>
-                    <PaperTextWelcome data={t("Welcome.TitleP")} color="#228BE6"/>
+                    <PaperTextWelcome data={t("Welcome.TitleP")} color={theme.colors.blue[6]}/>
                     <Space h="md"/>
                     <Grid align="center">
                         <Grid.Col span={8}>
@@ -67,19 +51,6 @@ function Welcome() {
                                 src={pictures.Aventurier}
                                 alt="Random unsplash image"
                             />
-                        </Grid.Col>
-                    </Grid>
-                    <Space h="md"/>
-                    <Grid align="center">
-                        <Grid.Col span={4}>
-                            <Image
-                                radius="md"
-                                src={pictures.Aventurier}
-                                alt="Random unsplash image"
-                            />
-                        </Grid.Col>
-                        <Grid.Col span={8}>
-                            <ListWelcome data={t("Welcome.Passionate.List2", { returnObjects: true })}/>
                         </Grid.Col>
                     </Grid>
                 </Grid.Col>
@@ -154,7 +125,7 @@ function Welcome() {
             <Grid columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                 <Grid.Col span={8}>
                     <Center>
-                        <ListWelcome data={t("Welcome.Adventurer.List3", { returnObjects: true })}/>
+                        <ListWelcome data={t("Welcome.Adventurer.List2", { returnObjects: true })}/>
                     </Center>
                 </Grid.Col>
                 <Grid.Col span={4}>
@@ -166,7 +137,7 @@ function Welcome() {
                 </Grid.Col>
                 <Grid.Col span={8}>
                     <Center>
-                        <ListWelcome data={t("Welcome.Passionate.List3", { returnObjects: true })}/>
+                        <ListWelcome data={t("Welcome.Passionate.List2", { returnObjects: true })}/>
                     </Center>
                 </Grid.Col>
             </Grid>

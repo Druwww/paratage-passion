@@ -13,17 +13,10 @@
     "TitleP" : "Passionné",
     "Adventurer": {
       "List1" : [
-        "Tu avais des passions étant plus jeune ?",
         "Tu adores découvir des nouvelles activités ?",
-        "Tu sais t'amuser en apprenant ?",
-        "Tu adores pratiquer une activité en dehors du travail ?",
-        "Tu n'as pas peur de rencontrer de nouvelles personnes ?"
-      ],
-      "List2" : [
-        "Mais aujourd'hui tu n'as pas retrouvé de passion qui t'anime",
-        "Mais tu ne sais pas par où commencer",
-        "Mais tu te retrouves noyer sous les informations",
-        "Mais  n'as pas envie de depenser trop de sous"
+        "Tu n'as pas peur de rencontrer de nouvelles personnes ?",
+        "Mais tu ne sais pas par où commencer...",
+        "Mais  n'as pas envie de depenser trop..."
       ],
       "Question1" : "Alors qui de mieux qu'un(e) passioné(e) pour répondre à tous ça ?",
       "TimeLine1" : [
@@ -40,7 +33,7 @@
           "text" : "Une fois ton passionné choisis, créer ton compte et envoie ton premier message"
         }
       ],
-      "List3" : [
+      "List2" : [
         "Tu as une meilleure idée sur le fonctionnement de la passion",
         "Tu sais par où commencer et en connaissant quelqu'un",
         "Tu as payé uniquement le strict minimum",
@@ -51,15 +44,8 @@
       "List1" : [
         "Tu as une passion qui t'anime ?",
         "Tu adores partager ton expérience et ton savoir faire ?",
-        "Tu ne regardes plus le temps tu pratiques ta passion ?",
-        "Tu es aussi bien flexible que régulier sur ton planning ?",
-        "Tu aimes rencontrer de nouvelles personne  ?"
-      ],
-      "List2" : [
-        "Mais tu te sens parfois un peu seul ou tu as fait le tour des rencontres possible",
-        "Mais tes amies s'ennuient quand tu leur parle de ta passion",
-        "Mais tu n'as pas envie que d'autre personnes tombe dans les même pièges que toi",
-        "Mais c'est difficile de rencontrer des personnes de confiance autour de sa passion"
+        "Mais tu te sens parfois un peu seul ...",
+        "Mais tu n'as pas envie que d'autre personnes tombe dans les même pièges que toi.."
       ],
       "Question1" : "Alors qui de mieux qu'un(e) aventurié(ière) pour répondre à tous ça ?",
       "TimeLine1" : [
@@ -76,7 +62,7 @@
           "text" : "Définie ton rythme, tes notifications et le type de rencontres que tu préfères faire"
         }
       ],
-      "List3" : [
+      "List2" : [
         "Tu as rencontré de potentiel futur passionnés",
         "Tu as partagé ta passion et ton expérience à sa juste valeur",
         "Tu as des nouveaux contacts et ami(e)s",

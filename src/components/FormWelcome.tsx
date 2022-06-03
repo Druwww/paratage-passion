@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import React from 'react';
 import {Box, Button, Checkbox, Group, MantineColor, Paper, TextInput} from "@mantine/core";
 import {useForm} from "@mantine/form";
