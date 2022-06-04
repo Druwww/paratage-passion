@@ -7,6 +7,7 @@ import {useTranslation} from "react-i18next";
 import ListWelcome from "../components/ListWelcome";
 import TimeLineWelcome from "../components/TimeLineWelcome";
 import FormWelcome from "../components/FormWelcome";
+import ImageAnimated from "../components/ImageAnimated";
 
 function Welcome() {
 
@@ -48,7 +49,7 @@ function Welcome() {
                         <Grid.Col span={4}>
                             <Image
                                 radius="md"
-                                src={pictures.Aventurier}
+                                src={pictures.Passioner}
                                 alt="Random unsplash image"
                             />
                         </Grid.Col>
@@ -59,19 +60,17 @@ function Welcome() {
             {
                 //Line 4
             }
-            <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
-                <Grid.Col span={9}>
-                    <PaperTextWelcome data={t("Welcome.Adventurer.Question1")}/>
+            <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })} justify="space-between" align="center">
+
+                <Grid.Col span={7}>
+                    <PaperTextWelcome data={t("Welcome.Adventurer.Question1")} animated="right"/>
                 </Grid.Col>
-                <Grid.Col span={1}>
-                    <Image
-                        radius="md"
-                        src={pictures.Handshake}
-                        alt="Random unsplash image"
-                    />
+
+                <Grid.Col span={2}>
+                    <ImageAnimated src={pictures.Handshake} alt={"Random unsplash image"} faded={true}/>
                 </Grid.Col>
-                <Grid.Col span={9}>
-                    <PaperTextWelcome data={t("Welcome.Passionate.Question1")}/>
+                <Grid.Col span={7}>
+                    <PaperTextWelcome data={t("Welcome.Passionate.Question1")} animated="left"/>
                 </Grid.Col>
             </Grid>
 
@@ -85,7 +84,7 @@ function Welcome() {
                 <Grid.Col span={4}>
                     <Image
                         radius="md"
-                        src={pictures.Aventurier}
+                        src={pictures.Rencontre}
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
@@ -101,7 +100,7 @@ function Welcome() {
                 <Grid.Col span={4}>
                     <Image
                         radius="md"
-                        src={pictures.Aventurier}
+                        src={pictures.Activite1}
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
@@ -111,7 +110,7 @@ function Welcome() {
                 <Grid.Col span={4}>
                     <Image
                         radius="md"
-                        src={pictures.Aventurier}
+                        src={pictures.Activite2}
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
@@ -131,7 +130,7 @@ function Welcome() {
                 <Grid.Col span={4}>
                     <Image
                         radius="md"
-                        src={pictures.Aventurier}
+                        src={pictures.Activite3}
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
@@ -152,7 +151,7 @@ function Welcome() {
                 <Grid.Col span={4}>
                     <Image
                         radius="md"
-                        src={pictures.Aventurier}
+                        src={pictures.Formulaire}
                         alt="Random unsplash image"
                     />
                 </Grid.Col>
