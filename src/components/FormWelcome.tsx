@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button, Checkbox, Group, MantineColor, Paper, TextInput} from "@mantine/core";
+import {Box, Button, Checkbox, Group, MantineColor, Paper, TextInput, useMantineColorScheme} from "@mantine/core";
 import {useForm} from "@mantine/form";
 
 interface FormWelcomeParams {
@@ -28,6 +28,9 @@ function FormWelcome(props:FormWelcomeParams) {
         },
     });
 
+    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+    const dark = colorScheme === 'dark';
+
     return (
         <React.Fragment>
             <Paper
@@ -35,7 +38,7 @@ function FormWelcome(props:FormWelcomeParams) {
                 withBorder={true}
                 sx={(theme) => ({
                     borderColor:props.color,
-                    backgroundColor:theme.colors.gray[0]
+                    backgroundColor: dark ? theme.colors.dark[8] : theme.colors.gray[0]
                 })}
             >
                 <Box sx={{ maxWidth: 300 }} mx="auto" style={{textAlign:"left"}}>
