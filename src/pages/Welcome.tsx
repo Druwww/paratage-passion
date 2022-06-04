@@ -62,14 +62,17 @@ function Welcome() {
             }
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })} justify="space-between" align="center">
 
-                <Grid.Col span={7}>
+                <Grid.Col span={6}>
                     <PaperTextWelcome data={t("Welcome.Adventurer.Question1")} animated="right"/>
                 </Grid.Col>
 
                 <Grid.Col span={2}>
-                    <ImageAnimated src={pictures.Handshake} alt={"Random unsplash image"} faded={true}/>
+                    <ImageAnimated src={pictures.hand1} alt={"Random unsplash image"} animated="right"/>
                 </Grid.Col>
-                <Grid.Col span={7}>
+                <Grid.Col span={2}>
+                    <ImageAnimated src={pictures.hand2} alt={"Random unsplash image"} animated="left"/>
+                </Grid.Col>
+                <Grid.Col span={6}>
                     <PaperTextWelcome data={t("Welcome.Passionate.Question1")} animated="left"/>
                 </Grid.Col>
             </Grid>
