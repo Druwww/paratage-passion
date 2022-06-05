@@ -8,6 +8,7 @@ import ListWelcome from "../components/ListWelcome";
 import TimeLineWelcome from "../components/TimeLineWelcome";
 import FormWelcome from "../components/FormWelcome";
 import ImageAnimated from "../components/ImageAnimated";
+import ImageBandeau from "../components/ImageBandeau";
 
 function Welcome() {
 
@@ -17,6 +18,8 @@ function Welcome() {
     return (
         <React.Fragment>
 
+            <ImageBandeau src={pictures.bandeau} alt="Background"/>
+            <Space h="xs"/>
             <Title order={3}>{t("Welcome.Question1")}</Title>
 
             <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })}>
