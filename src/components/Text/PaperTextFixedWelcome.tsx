@@ -28,6 +28,7 @@ function PaperTextFixedWelcome(props:PaperTextFixedWelcomeParams) {
                     sx={(theme) => ({
                         backgroundColor: props.color,
                     })}
+                    style={{display: 'flex', flexDirection: 'row',justifyContent: 'center'}}
 
                 >
                     <Text weight={700} >
