@@ -37,8 +37,9 @@ function PaperTextWelcome(props:PaperTextWelcomeParams) {
                     sx={(theme) => ({
                         backgroundColor: props.color,
                     })}
+                    style={{position: 'fixed', height : "auto", width: "auto"}}
                 >
-                    <Text weight={700}>
+                    <Text weight={700} >
                         {props.data}
                     </Text>
                 </Paper>

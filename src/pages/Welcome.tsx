@@ -56,8 +56,11 @@ function Welcome() {
                             </Grid.Col>
                         </Grid>
                     </Grid.Col>
-                    <Grid.Col span={1}>
-                            <Divider ml="xl" size="lg" variant="dashed" orientation="vertical"/>
+                    <Grid.Col  span={1}>
+                            <Center style={{ height: "300px" }}>
+                                <Divider size="lg" variant="dashed" orientation="vertical"/>
+
+                            </Center>
                     </Grid.Col>
                     <Grid.Col span={9}>
                         <PaperTextWelcome id="W_T_T2" data={t("Welcome.TitleP")} color={theme.colors.blue[6]}/>
