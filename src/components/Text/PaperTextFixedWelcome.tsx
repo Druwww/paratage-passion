@@ -4,23 +4,15 @@ import {Paper, Text} from "@mantine/core";
 import {useSpring, animated} from "react-spring";
 import {useXarrow} from "react-xarrows";
 
-interface PaperTextWelcomeParams {
+interface PaperTextFixedWelcomeParams {
     id? : string
     data : string
     color?: string
-    animated?: string
 }
 
-function PaperTextWelcome(props:PaperTextWelcomeParams) {
+function PaperTextFixedWelcome(props:PaperTextFixedWelcomeParams) {
 
     const updateXarrow = useXarrow()
-
-        const animation = useSpring({
-            from: {x: 0},
-            to: {x: props.animated ? (props.animated.localeCompare("left") ? 100 : -100) : 0},
-            delay: 2000,
-            onChange: () => updateXarrow()
-        })
 
 
     useEffect(() =>{
@@ -29,7 +21,6 @@ function PaperTextWelcome(props:PaperTextWelcomeParams) {
 
     return (
         <React.Fragment>
-            <animated.div style={props.animated ? {...animation} : {}}>
                 <Paper
                     id={props.id}
                     shadow="sm"
@@ -37,15 +28,14 @@ function PaperTextWelcome(props:PaperTextWelcomeParams) {
                     sx={(theme) => ({
                         backgroundColor: props.color,
                     })}
-                    style={{position: 'fixed', height : "auto", width: "auto"}}
+
                 >
                     <Text weight={700} >
                         {props.data}
                     </Text>
                 </Paper>
-            </animated.div>
         </React.Fragment>
     );
 }
 
-export default PaperTextWelcome;
+export default PaperTextFixedWelcome;

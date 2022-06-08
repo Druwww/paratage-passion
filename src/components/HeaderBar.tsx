@@ -3,8 +3,8 @@ import React from 'react';
 import {Group, Grid, Text, Avatar, Space} from '@mantine/core';
 
 import {useTranslation} from "react-i18next";
-import LanguageSwap from "./LanguageSwap";
-import DarkLightSwitch from "./DarkLightSwitch";
+import LanguageSwap from "./Button/LanguageSwap";
+import DarkLightSwitch from "./Button/DarkLightSwitch";
 
 import pictures from "../assets/pictures/links.json";
 

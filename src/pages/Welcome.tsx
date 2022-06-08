@@ -1,15 +1,16 @@
 import React from 'react';
 
 import {Divider, Grid, Image, Title, Space, Center, useMantineTheme} from "@mantine/core";
-import PaperTextWelcome from "../components/PaperTextWelcome";
+import PaperTextWelcome from "../components/Text/PaperTextWelcome";
 import pictures from "../assets/pictures/links.json";
 import {useTranslation} from "react-i18next";
-import ListWelcome from "../components/ListWelcome";
-import TimeLineWelcome from "../components/TimeLineWelcome";
-import FormWelcome from "../components/FormWelcome";
-import ImageAnimated from "../components/ImageAnimated";
-import ImageBandeau from "../components/ImageBandeau";
-import Xarrow, {Xwrapper} from "react-xarrows";
+import ListWelcome from "../components/Text/ListWelcome";
+import TimeLineWelcome from "../components/Text/TimeLineWelcome";
+import FormWelcome from "../components/Form/FormWelcome";
+import ImageAnimated from "../components/Image/ImageAnimated";
+import ImageBandeau from "../components/Image/ImageBandeau";
+import {Xwrapper} from "react-xarrows";
+import ArrowWelcome from "../components/Image/ArrowWelcome";
 
 function Welcome() {
 
@@ -25,20 +26,24 @@ function Welcome() {
                 <Space h="xl"/>
                 <Space h="xl"/>
                 <Space h="xl"/>
-                <Xarrow
+                <ArrowWelcome
                     start={'W_T_Q1'}
                     end="W_T_T1"
                     endAnchor={'top'}
                     startAnchor={'bottom'}
                     color={theme.colorScheme.localeCompare('black') ? theme.colors.gray[6] : "black"}
-                    animateDrawing={2.5}/>
-                <Xarrow
+                    delay={300}
+                    animateDrawing={1}
+                    />
+                <ArrowWelcome
                     start={'W_T_Q1'}
                     end="W_T_T2"
                     endAnchor={'top'}
                     startAnchor={'bottom'}
                     color={theme.colorScheme.localeCompare('black') ? theme.colors.gray[6] : "black"}
-                    animateDrawing={2.5}/>
+                    delay={300}
+                    animateDrawing={1}
+                    />
                 <Grid columns={19} sx={(theme) => ({ padding: theme.spacing.md })}>
                     <Grid.Col span={9}>
                         <PaperTextWelcome id="W_T_T1" data={t("Welcome.TitleA")} color={theme.colors.green[6]}/>
@@ -99,20 +104,22 @@ function Welcome() {
                     <Grid.Col span={6}>
                         <PaperTextWelcome id="W_T_QP" data={t("Welcome.Passionate.Question1")} animated="left"/>
                     </Grid.Col>
-                    <Xarrow
+                    <ArrowWelcome
                         start={'W_T_QA'}
                         end="W_TL_A"
                         color={theme.colors.green[6]}
                         endAnchor={{position: "top", offset: { x: -150, y: -20 }}}
                         startAnchor={'bottom'}
-                        animateDrawing={3}/>
-                    <Xarrow
+                        animateDrawing={3}
+                        delay={3000}/>
+                    <ArrowWelcome
                         start={'W_T_QP'}
                         end="W_TL_P"
                         color={theme.colors.blue[6]}
                         endAnchor={{position: "top", offset: { x: 200, y : -20 }}}
                         startAnchor={'bottom'}
-                        animateDrawing={3}/>
+                        animateDrawing={3}
+                        delay={3000}/>
                 </Grid>
 
                 {
@@ -157,8 +164,8 @@ function Welcome() {
                     </Grid.Col>
                 </Grid>
 
-                <Xarrow start={'W_TL_C'} end="W_L_A" color={theme.colors.green[6]} endAnchor={{position: "top", offset: {y: -20 }}} startAnchor={'bottom'}/>
-                <Xarrow start={'W_TL_C'} end="W_L_P" color={theme.colors.blue[6]} endAnchor={{position: "top", offset: {y : -20 }}} startAnchor={'bottom'}/>
+                <ArrowWelcome start={'W_TL_C'} end="W_L_A" color={theme.colors.green[6]} endAnchor={{position: "top", offset: {y: -20 }}} startAnchor={'bottom'}/>
+                <ArrowWelcome start={'W_TL_C'} end="W_L_P" color={theme.colors.blue[6]} endAnchor={{position: "top", offset: {y : -20 }}} startAnchor={'bottom'}/>
 
                 {
                     //Line 6
