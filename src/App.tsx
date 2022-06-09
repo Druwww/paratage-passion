@@ -4,6 +4,7 @@ import './App.css';
 import {initializeApp} from 'firebase/app';
 import { MantineProvider, ColorSchemeProvider, ColorScheme} from '@mantine/core';
 import MainApp from "./pages/MainApp";
+import {NotificationsProvider} from "@mantine/notifications";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCLbQ7M6BczUd0Uv8gaFkHfvzYO1X7rnvo",
@@ -25,16 +26,13 @@ function App() {
     return (
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-                <div className="App">
-
-                    <header>
-                        <MainApp />
-                    </header>
-
-                    <section>
-
-                    </section>
-                </div>
+                <NotificationsProvider>
+                    <div className="App">
+                        <header>
+                            <MainApp />
+                        </header>
+                    </div>
+                </NotificationsProvider>
             </MantineProvider>
         </ColorSchemeProvider>
     );

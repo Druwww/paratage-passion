@@ -106,6 +106,16 @@
           "ErrorEmail" : "invalid email",
           "Checkbox" : "Subscribe to the project's newsletter ?",
           "Validation" : "Submit"
+        },
+        "Notification" : {
+          "Success" : {
+            "title" : "Noted !",
+            "message" : "Thanks for showing your support for the project"
+          },
+          "Fail" : {
+            "title" : "Oups...",
+            "message" : "It looks like this email address has been already used, try again with another one. "
+          }
         }
       }
     }

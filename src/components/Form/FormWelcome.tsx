@@ -1,6 +1,10 @@
 import React from 'react';
 import {Box, Button, Checkbox, Group, MantineColor, Paper, TextInput, useMantineColorScheme} from "@mantine/core";
 import {useForm} from "@mantine/form";
+import {getFirestore, doc, setDoc} from "firebase/firestore";
+import notificationSuccess from "../Notification/NotificationSuccess";
+import notificationFail from "../Notification/NotificationFail";
+import {t} from "i18next";
 
 interface FormWelcomeParams {
     form : {
@@ -10,7 +14,7 @@ interface FormWelcomeParams {
         Checkbox : string,
         Validation : string,
     }
-    isPassionate : boolean,
+    personType : string,
     color? : MantineColor
 }
 
@@ -22,13 +26,39 @@ function FormWelcome(props:FormWelcomeParams) {
         initialValues: {
             email: '',
             newsLetter: false,
+            personType: props.personType
         },
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : props.form.ErrorEmail),
         },
     });
 
-    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+
+
+    const sendForm = async (values: { email: string, newsLetter: boolean }) => {
+        const db = getFirestore();
+
+        try {
+            await setDoc(doc(db, "poc", values.email.split('@')[0]), {
+                values
+            }).then((result) => {
+                    form.reset();
+                    notificationSuccess(
+                        t("Welcome.Form.Interest.Notification.Success.title"),
+                        t("Welcome.Form.Interest.Notification.Success.message")
+                    )
+                }
+            )
+        } catch (e) {
+            notificationFail(
+                t("Welcome.Form.Interest.Notification.Fail.title"),
+                t("Welcome.Form.Interest.Notification.Fail.message")
+            )
+        }
+
+    }
+
+    const { colorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
 
     return (
@@ -42,7 +72,7 @@ function FormWelcome(props:FormWelcomeParams) {
                 })}
             >
                 <Box sx={{ maxWidth: 300 }} mx="auto" style={{textAlign:"left"}}>
-                    <form onSubmit={form.onSubmit((values) => console.log(values, (props.isPassionate ? "Passionate" : "Adventurer")))}>
+                    <form onSubmit={form.onSubmit(sendForm)}>
                         <TextInput
                             required
                             label={props.form.Title}
