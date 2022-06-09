@@ -195,7 +195,7 @@ function Welcome() {
                 }
                 <Grid justify="space-around" columns={20} sx={(theme) => ({ padding: theme.spacing.md })} align="center">
                     <Grid.Col span={6}>
-                        <FormWelcome color={theme.colors.green[6]} form={t("Welcome.Form.Interest.QuestionA",{ returnObjects: true })} isPassionate={false}/>
+                        <FormWelcome color={theme.colors.green[6]} form={t("Welcome.Form.Interest.QuestionA",{ returnObjects: true })} personType='Adventurer'/>
                     </Grid.Col>
                     <Grid.Col span={4}>
                         <Image
@@ -205,7 +205,7 @@ function Welcome() {
                         />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                            <FormWelcome color={theme.colors.blue[6]} form={t("Welcome.Form.Interest.QuestionP", { returnObjects: true })} isPassionate={true}/>
+                            <FormWelcome color={theme.colors.blue[6]} form={t("Welcome.Form.Interest.QuestionP", { returnObjects: true })} personType='Passionate'/>
                     </Grid.Col>
                 </Grid>
             </Xwrapper>
