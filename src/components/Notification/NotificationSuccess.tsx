@@ -7,7 +7,8 @@ const notificationSuccess = (title : string, message :string) => {
         title : title,
         message : message,
         color: 'green',
-        icon: <Check />
+        icon: <Check />,
+        autoClose: 6000,
     })
 }
 

@@ -7,7 +7,8 @@ const notificationFail = (title : string, message :string) => {
         title : title,
         message : message,
         color: 'red',
-        icon: <AlertTriangle/>
+        icon: <AlertTriangle/>,
+        autoClose: 5000,
     })
 }
 

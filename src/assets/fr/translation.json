@@ -106,6 +106,16 @@
           "ErrorEmail" : "email invalide",
           "Checkbox" : "Recevoir l'infolettre du projet",
           "Validation" : "Envoyer"
+        },
+        "Notification" : {
+          "Success" : {
+            "title" : "C'est noté !",
+            "message" : "Merci d'avoir montrer ton interet envers le projet"
+          },
+          "Fail" : {
+            "title" : "Oups...",
+            "message" : "Il semble que cette adresse mail a déja été entré, essayez avec une autre."
+          }
         }
       }
     }

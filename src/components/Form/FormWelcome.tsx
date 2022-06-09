@@ -4,6 +4,7 @@ import {useForm} from "@mantine/form";
 import {getFirestore, doc, setDoc} from "firebase/firestore";
 import notificationSuccess from "../Notification/NotificationSuccess";
 import notificationFail from "../Notification/NotificationFail";
+import {t} from "i18next";
 
 interface FormWelcomeParams {
     form : {
@@ -41,13 +42,18 @@ function FormWelcome(props:FormWelcomeParams) {
             await setDoc(doc(db, "poc", values.email.split('@')[0]), {
                 values
             }).then((result) => {
-                    console.log("Written with id : ", values.email.split('@')[0]);
                     form.reset();
-                    notificationSuccess("C'est noté !", "Merci de montrer ton interet pour le projet :)")
+                    notificationSuccess(
+                        t("Welcome.Form.Interest.Notification.Success.title"),
+                        t("Welcome.Form.Interest.Notification.Success.message")
+                    )
                 }
             )
         } catch (e) {
-            notificationFail("Oups...", "Il semble que tu es deja inscrit, sinon, essaye avec une autre email adresse !")
+            notificationFail(
+                t("Welcome.Form.Interest.Notification.Fail.title"),
+                t("Welcome.Form.Interest.Notification.Fail.message")
+            )
         }
 
     }
