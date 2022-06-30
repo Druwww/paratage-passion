@@ -10,7 +10,7 @@ import FormWelcome from "../components/Form/FormWelcome";
 import ImageAnimated from "../components/Image/ImageAnimated";
 import ImageBandeau from "../components/Image/ImageBandeau";
 import {Xwrapper} from "react-xarrows";
-import ArrowWelcome from "../components/Image/ArrowWelcome";
+import ArrowClassic from "../components/Image/ArrowClassic";
 
 function Welcome() {
 
@@ -26,7 +26,7 @@ function Welcome() {
                 <Space h="xl"/>
                 <Space h="xl"/>
                 <Space h="xl"/>
-                <ArrowWelcome
+                <ArrowClassic
                     start={'W_T_Q1'}
                     end="W_T_T1"
                     endAnchor={'top'}
@@ -35,7 +35,7 @@ function Welcome() {
                     delay={300}
                     animateDrawing={1}
                     />
-                <ArrowWelcome
+                <ArrowClassic
                     start={'W_T_Q1'}
                     end="W_T_T2"
                     endAnchor={'top'}
@@ -104,7 +104,7 @@ function Welcome() {
                     <Grid.Col span={6}>
                         <PaperTextWelcome id="W_T_QP" data={t("Welcome.Passionate.Question1")} animated="left"/>
                     </Grid.Col>
-                    <ArrowWelcome
+                    <ArrowClassic
                         start={'W_T_QA'}
                         end="W_TL_A"
                         color={theme.colors.green[6]}
@@ -112,7 +112,7 @@ function Welcome() {
                         startAnchor={'bottom'}
                         animateDrawing={3}
                         delay={3000}/>
-                    <ArrowWelcome
+                    <ArrowClassic
                         start={'W_T_QP'}
                         end="W_TL_P"
                         color={theme.colors.blue[6]}
@@ -164,8 +164,8 @@ function Welcome() {
                     </Grid.Col>
                 </Grid>
 
-                <ArrowWelcome start={'W_TL_C'} end="W_L_A" color={theme.colors.green[6]} endAnchor={{position: "top", offset: {y: -20 }}} startAnchor={'bottom'}/>
-                <ArrowWelcome start={'W_TL_C'} end="W_L_P" color={theme.colors.blue[6]} endAnchor={{position: "top", offset: {y : -20 }}} startAnchor={'bottom'}/>
+                <ArrowClassic start={'W_TL_C'} end="W_L_A" color={theme.colors.green[6]} endAnchor={{position: "top", offset: {y: -20 }}} startAnchor={'bottom'}/>
+                <ArrowClassic start={'W_TL_C'} end="W_L_P" color={theme.colors.blue[6]} endAnchor={{position: "top", offset: {y : -20 }}} startAnchor={'bottom'}/>
 
                 {
                     //Line 6

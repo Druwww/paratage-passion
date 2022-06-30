@@ -1,12 +1,13 @@
 import React from 'react';
 
-import {Group, Grid, Text, Avatar, Space} from '@mantine/core';
+import {Group, Grid, Text, Avatar, Space, Divider} from '@mantine/core';
 
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./Button/LanguageSwap";
 import DarkLightSwitch from "./Button/DarkLightSwitch";
 
 import pictures from "../assets/pictures/links.json";
+import ButtonNavigation from "./Button/ButtonNavigation";
 
 function HeaderBar() {
 
@@ -15,7 +16,7 @@ function HeaderBar() {
     return (
         <React.Fragment>
             <Grid justify="space-between">
-                <Grid.Col span={3}>
+                <Grid.Col span={5}>
                     <Group spacing="xs" position="left">
                         <Avatar
                             src={pictures.Logo}
@@ -34,6 +35,8 @@ function HeaderBar() {
                             {t("Share your passion")}
                         </Text>
                         <Space h="xl" />
+                        <ButtonNavigation name={"Le concept"} path={"/welcome"}/>
+                        <ButtonNavigation name={"Inscription"} path={"/signin"}/>
                     </Group>
                 </Grid.Col>
                 <Grid.Col span={3}>
