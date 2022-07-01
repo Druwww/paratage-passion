@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {useTranslation} from "react-i18next";
-import {Divider, Grid, Space, Title, useMantineTheme} from "@mantine/core";
+import {Divider, Grid, Space, Title, useMantineTheme, Modal} from "@mantine/core";
 import {Xwrapper} from "react-xarrows";
 import pictures from "../assets/pictures/links.json";
 import ImageBandeau from "../components/Image/ImageBandeau";
 import ButtonClassic from "../components/Button/ButtonClassic";
 import ArrowClassic from "../components/Image/ArrowClassic";
 import {useNavigate} from "react-router-dom";
+import FormSigninAv from "../components/Form/FormSigninAv";
 
 function Inscription() {
 
@@ -15,9 +16,58 @@ function Inscription() {
     const theme = useMantineTheme();
     const navigate = useNavigate();
 
+    const [opened, setOpened] = useState(false);
+    //0 : idle, 1 : Adventurer, 2 : Passionaite, 3 : Login
+    const [formulaire, setFormulaire] = useState(0);
+
+    const triggerForm = (typeForme : number) => {
+        setOpened(true)
+        setFormulaire(typeForme)
+    }
+
+    const renderTitleForms = (typeForme : number) => {
+        switch (typeForme){
+            case 1 :
+                return "Inscription Aventurier"
+                break;
+            case 2 :
+                return "Inscription Passionné"
+                break;
+            case 3 :
+                return "Connexion"
+                break;
+            default :
+                return "Erreur"
+        }
+    }
+
+    const renderForms = (typeForme : number) => {
+        switch (typeForme){
+            case 1 :
+                return (<FormSigninAv />)
+                break;
+            case 2 :
+                return (<Title>Passioné</Title>)
+                break;
+            case 3 :
+                return (<Title>Login</Title>)
+                break;
+            default :
+                return (<Title>Error</Title>)
+        }
+    }
+
     return (
         <React.Fragment>
             <Xwrapper>
+                <Modal
+                    opened={opened}
+                    onClose={() => setOpened(false)}
+                    title={renderTitleForms(formulaire)}
+                >
+                    {renderForms(formulaire)}
+                </Modal>
+
                 <ImageBandeau src={pictures.bandeau} alt="Background"/>
                 <Space h="xl"/>
                 <Title id="I_T_1" order={3}>Prêt pour de nouvelles rencontre ?</Title>
@@ -30,7 +80,7 @@ function Inscription() {
                         <ButtonClassic
                             id="I_B_A"
                             name={"Inscrit toi en futur Avenuturier !"}
-                            action={() => console.log("Aventurier")}
+                            action={() => triggerForm(1)}
                             color={"green"}
                         />
                     </Grid.Col>
@@ -38,7 +88,7 @@ function Inscription() {
                         <ButtonClassic
                             id="I_B_P"
                             name={"Inscrit toi Pasionnée !"}
-                            action={() => console.log("Passionnée")}
+                            action={() => triggerForm(2)}
                             color={"blue"}
                         />
                     </Grid.Col>
@@ -78,7 +128,7 @@ function Inscription() {
                 <ButtonClassic
                     id="I_B_L"
                     name={"Verfirie tes informations ici"}
-                    action={() => console.log("Retour")}
+                    action={() => triggerForm(3)}
                 />
             </Xwrapper>
         </React.Fragment>
