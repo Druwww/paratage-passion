@@ -71,7 +71,7 @@ function FormSignin(props:FormSigninAvParams) {
     const addInformations = async (userId : string, email : string, birthday : Date, hobbies : string[]) => {
 
         const userData = {uid : userId, email: email, birthday: birthday, hobbies: hobbies, type : props.type}
-        await setDoc(doc(db, 'userData', userId), {
+        setDoc(doc(db, 'userData', userId), {
             userData
         }).then(() => {
             setLoading(false);
@@ -83,6 +83,15 @@ function FormSignin(props:FormSigninAvParams) {
             setLoading(false)
             setError(error.message)
         });
+
+        setDoc(doc(db, 'data', 'hobbies'), {
+            data
+        }).then(() => {
+            console.log("Champs updated")
+        })
+        .catch((error) => {
+            console.error(error)
+        });
     }
 
     useEffect(() => {
@@ -91,7 +100,7 @@ function FormSignin(props:FormSigninAvParams) {
             const db = getFirestore();const docRef = doc(db, "data", "hobbies");
             const reqHobbies = await getDoc(docRef);
             // @ts-ignore
-            setData(reqHobbies.data().hobbies)
+            setData(reqHobbies.data().data)
         }
 
         // call the function
