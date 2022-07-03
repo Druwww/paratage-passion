@@ -2,19 +2,18 @@ import React, {useEffect, useState} from 'react';
 import {
     Box,
     Button,
-    Group, LoadingOverlay, MultiSelect,
+    Group, MultiSelect,
     PasswordInput,
     TextInput,
-    useMantineColorScheme
+    Text
+
 } from "@mantine/core";
 import {useForm} from "@mantine/form";
 import {getFirestore, doc, getDoc, setDoc} from "firebase/firestore";
 import notificationSuccess from "../Notification/NotificationSuccess";
-import notificationFail from "../Notification/NotificationFail";
-import {t} from "i18next";
+//import {t} from "i18next";
 import {DatePicker} from "@mantine/dates";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import firebase from "firebase/compat";
 
 interface FormSigninAvParams {
     close() : any,
@@ -24,26 +23,29 @@ interface FormSigninAvParams {
 function FormSignin(props:FormSigninAvParams) {
 
     const db = getFirestore();
-    const { colorScheme } = useMantineColorScheme();
-    const dark = colorScheme === 'dark';
+    //const { colorScheme } = useMantineColorScheme();
+    //const dark = colorScheme === 'dark';
 
     const [data, setData] = useState(['Tennis', 'Foot']);
 
     const [loading, setLoading] = useState(false);
 
-    const form = useForm({
+    const [error, setError] = useState(null);
+
+
+    let form = useForm({
         initialValues: {
             email: '',
-            password : '',
-            confPassword : '',
-            birthday : new Date(),
-            hobbies : []
+            password: '',
+            confPassword: '',
+            birthday: new Date(),
+            hobbies: []
         },
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : "Error email"),
-            password: (value) => ( /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value) ? null : "Error password"),
+            password: (value) => (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value) ? null : "Error password"),
             confPassword: (value, values) => (value === values.password ? null : "Not same password"),
-            birthday: (value : Date) => ( new Date().getFullYear() - value.getFullYear() >= 18 ? null : "Il faut avoir 18 ans au minimum")
+            birthday: (value: Date) => (new Date().getFullYear() - value.getFullYear() >= 18 ? null : "Il faut avoir 18 ans au minimum")
 
         },
     });
@@ -62,9 +64,8 @@ function FormSignin(props:FormSigninAvParams) {
             .catch((error) => {
                 console.error(error)
                 setLoading(false)
-                // ..
+                setError(error.message)
             });
-
     }
 
     const addInformations = async (userId : string, email : string, birthday : Date, hobbies : string[]) => {
@@ -75,16 +76,14 @@ function FormSignin(props:FormSigninAvParams) {
         }).then(() => {
             setLoading(false);
             props.close();
-            notificationSuccess("Inscription réussite","go jouer enfin");
+            notificationSuccess("Inscription réussite","Vous êtes bien inscrit :)");
         })
         .catch((error) => {
             console.error(error)
             setLoading(false)
-            // ..
+            setError(error.message)
         });
     }
-
-
 
     useEffect(() => {
         // declare the data fetching function
@@ -106,7 +105,10 @@ function FormSignin(props:FormSigninAvParams) {
         <React.Fragment>
 
             <Box sx={{ maxWidth: 300 }} mx="auto" style={{textAlign:"left"}}>
+
+
                 <form onSubmit={form.onSubmit(sendSingin)}>
+                    {error ? <Text  color="red">{error}</Text> : <></>}
                     <TextInput
                         required
                         label="Email"

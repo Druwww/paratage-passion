@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {useTranslation} from "react-i18next";
+//import {useTranslation} from "react-i18next";
 import {Divider, Grid, Space, Title, useMantineTheme, Modal} from "@mantine/core";
 import {Xwrapper} from "react-xarrows";
 import pictures from "../assets/pictures/links.json";
@@ -9,16 +9,25 @@ import ButtonClassic from "../components/Button/ButtonClassic";
 import ArrowClassic from "../components/Image/ArrowClassic";
 import {useNavigate} from "react-router-dom";
 import FormSignin from "../components/Form/FormSignin";
+import FormLogin from "../components/Form/FormLogin";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import User from "firebase/compat";
+import FormUpdateUser from "../components/Form/FormUpdateUser";
+
 
 function Inscription() {
 
-    const { t } = useTranslation();
+    //const { t } = useTranslation();
     const theme = useMantineTheme();
     const navigate = useNavigate();
 
     const [opened, setOpened] = useState(false);
     //0 : idle, 1 : Adventurer, 2 : Passionaite, 3 : Login
     const [formulaire, setFormulaire] = useState(0);
+
+    const [user, setUser] = useState(false);
+    const auth = getAuth();
+
 
     const triggerForm = (typeForme : number) => {
         setOpened(true)
@@ -29,29 +38,38 @@ function Inscription() {
         switch (typeForme){
             case 1 :
                 return "Inscription Aventurier"
-                break;
+
             case 2 :
                 return "Inscription Passionné"
-                break;
+
             case 3 :
                 return "Connexion"
-                break;
+
             default :
                 return "Erreur"
         }
+    }
+
+    const updateUser = () => {
+        const user = auth.currentUser;
+        user ? setUser(true) : setUser(false)
     }
 
     const renderForms = (typeForme : number) => {
         switch (typeForme){
             case 1 :
                 return (<FormSignin close={() => setOpened(false)} type={"Adventurer"}/>)
-                break;
+
             case 2 :
                 return (<FormSignin close={() => setOpened(false)} type={"Passionate"}/>)
-                break;
+
             case 3 :
-                return (<Title>Login</Title>)
-                break;
+                if (user) {
+                    return (<FormUpdateUser close={() => updateUser()}/>)
+                } else {
+                    return (<FormLogin validate={() => setUser(true)}/>)
+                }
+
             default :
                 return (<Title>Error</Title>)
         }
