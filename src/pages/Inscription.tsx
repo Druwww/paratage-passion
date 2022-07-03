@@ -8,7 +8,7 @@ import ImageBandeau from "../components/Image/ImageBandeau";
 import ButtonClassic from "../components/Button/ButtonClassic";
 import ArrowClassic from "../components/Image/ArrowClassic";
 import {useNavigate} from "react-router-dom";
-import FormSigninAv from "../components/Form/FormSigninAv";
+import FormSignin from "../components/Form/FormSignin";
 
 function Inscription() {
 
@@ -44,10 +44,10 @@ function Inscription() {
     const renderForms = (typeForme : number) => {
         switch (typeForme){
             case 1 :
-                return (<FormSigninAv />)
+                return (<FormSignin close={() => setOpened(false)} type={"Adventurer"}/>)
                 break;
             case 2 :
-                return (<Title>Passioné</Title>)
+                return (<FormSignin close={() => setOpened(false)} type={"Passionate"}/>)
                 break;
             case 3 :
                 return (<Title>Login</Title>)
