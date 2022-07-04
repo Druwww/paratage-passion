@@ -4,7 +4,7 @@ import {Image} from '@mantine/core';
 import {useSpring, animated} from "react-spring";
 import Xarrow, {anchorType} from "react-xarrows";
 
-interface ArrowWelcomeParams {
+interface ArrowClassicParams {
     start : string
     end : string
     endAnchor?: anchorType
@@ -14,7 +14,7 @@ interface ArrowWelcomeParams {
     delay? : number
 }
 
-function ArrowWelcome(props: ArrowWelcomeParams) {
+function ArrowClassic(props: ArrowClassicParams) {
 
     const [display, setDisplay] = useState(props.delay ? false : true);
 
@@ -44,4 +44,4 @@ function ArrowWelcome(props: ArrowWelcomeParams) {
     );
 }
 
-export default ArrowWelcome;
+export default ArrowClassic;

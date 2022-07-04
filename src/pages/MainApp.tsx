@@ -2,9 +2,10 @@ import React from 'react';
 
 import {AppShell, Header} from '@mantine/core';
 import HeaderBar from "../components/HeaderBar";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
 import Welcome from "./Welcome";
 import Map from "./Map";
+import Inscription from "./Inscription";
 
 
 function MainApp() {
@@ -24,8 +25,14 @@ function MainApp() {
             >
 
                 <Routes>
-                    <Route path="/" element={<Welcome />}/>
+                    <Route
+                        path="/"
+                        element={<Navigate to="signin"/>}
+                    />
+                    <Route path="welcome" element={<Welcome />}/>
                     <Route path="map" element={<Map />}/>
+                    <Route path="signin" element={<Inscription />}/>
+
                 </Routes>
 
             </AppShell>
