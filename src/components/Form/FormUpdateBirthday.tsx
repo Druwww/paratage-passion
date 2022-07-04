@@ -1,16 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     ActionIcon,
-    Box,
-    Button, Grid,
     Group,
-    Text, TextInput
-
+    Text,
 } from "@mantine/core";
 import {getFirestore, doc, updateDoc } from "firebase/firestore";
 //import {t} from "i18next";
-import { getAuth, updateEmail } from "firebase/auth";
-import {string} from "zod";
+import { getAuth} from "firebase/auth";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
 import {DatePicker} from "@mantine/dates";

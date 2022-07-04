@@ -10,8 +10,7 @@ import ArrowClassic from "../components/Image/ArrowClassic";
 import {useNavigate} from "react-router-dom";
 import FormSignin from "../components/Form/FormSignin";
 import FormLogin from "../components/Form/FormLogin";
-import {getAuth, onAuthStateChanged} from "firebase/auth";
-import User from "firebase/compat";
+import {getAuth} from "firebase/auth";
 import FormUpdateUser from "../components/Form/FormUpdateUser";
 
 
