@@ -72,7 +72,7 @@ function FormSignin(props:FormSigninAvParams) {
 
         const userData = {uid : userId, email: email, birthday: birthday, hobbies: hobbies, type : props.type}
         setDoc(doc(db, 'userData', userId), {
-            userData
+            ...userData
         }).then(() => {
             setLoading(false);
             props.close();
@@ -113,7 +113,7 @@ function FormSignin(props:FormSigninAvParams) {
     return (
         <React.Fragment>
 
-            <Box sx={{ maxWidth: 300 }} mx="auto" style={{textAlign:"left"}}>
+            <Box mx="auto" style={{textAlign:"left"}}>
 
 
                 <form onSubmit={form.onSubmit(sendSingin)}>
@@ -144,7 +144,7 @@ function FormSignin(props:FormSigninAvParams) {
                     />
 
                     <DatePicker
-                        label="Event date"
+                        label="Birthday"
                         required
                         {...form.getInputProps('birthday')}
                     />

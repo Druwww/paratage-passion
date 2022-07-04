@@ -43,6 +43,9 @@ function Inscription() {
                 return "Inscription Passionné"
 
             case 3 :
+                if (user) {
+                    return "Profil de : " + auth.currentUser?.email
+                }
                 return "Connexion"
 
             default :
@@ -79,6 +82,7 @@ function Inscription() {
         <React.Fragment>
             <Xwrapper>
                 <Modal
+                    size="lg"
                     opened={opened}
                     onClose={() => setOpened(false)}
                     title={renderTitleForms(formulaire)}
