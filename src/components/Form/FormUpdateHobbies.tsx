@@ -1,29 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import {
     ActionIcon,
-    Box,
-    Button, Grid,
-    Group, MultiSelect,
-    Text, TextInput
+    Group,
+    MultiSelect,
+    Text
 
 } from "@mantine/core";
 import {getFirestore, doc, updateDoc, getDoc, setDoc} from "firebase/firestore";
-//import {t} from "i18next";
-import { getAuth, updateEmail } from "firebase/auth";
-import {string} from "zod";
+import { getAuth } from "firebase/auth";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
-import {DatePicker} from "@mantine/dates";
 
 interface FormUpdateHobbiesParams {
     hobbies : string[]
 }
 
+/**
+ * @param {FormUpdateHobbiesParams} props - Object with parameters
+ * @param {string[]} props.hobbies - The actual user hobbies
+ * @returns {React.Fragment} Form to update the user hobbies
+ */
 function FormUpdateHobbies(props:FormUpdateHobbiesParams) {
 
     const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
     const auth = getAuth();
 
     const [loading, setLoading] = useState(false);

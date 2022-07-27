@@ -20,6 +20,12 @@ interface FormSigninAvParams {
     type : string
 }
 
+/**
+ * @param {FormSigninAvParams} props - Object with parameters
+ * @param {Function} props.close - The function to call when the sing in is complete.
+ * @param {string} props.type - what type is the user : Adventurer|Passionate
+ * @returns {React.Fragment} Form to create an Adventurer
+ */
 function FormSignin(props:FormSigninAvParams) {
 
     const db = getFirestore();

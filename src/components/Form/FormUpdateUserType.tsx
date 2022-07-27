@@ -1,29 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     ActionIcon,
-    Box,
-    Button, Grid,
-    Group, MultiSelect, Radio, RadioGroup,
-    Text, TextInput
-
+    Group,
+    Radio,
+    RadioGroup,
+    Text,
 } from "@mantine/core";
-import {getFirestore, doc, updateDoc, getDoc, setDoc} from "firebase/firestore";
-//import {t} from "i18next";
-import { getAuth, updateEmail } from "firebase/auth";
-import {string} from "zod";
+import {getFirestore, doc, updateDoc} from "firebase/firestore";
+
+import { getAuth} from "firebase/auth";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
-import {DatePicker} from "@mantine/dates";
 
 interface FormUpdateUserTypeParams {
     type : string
 }
 
+/**
+ * @param {FormUpdateUserTypeParams} props - Object with parameters
+ * @param {string} props.type - The actuel user type (Adventurer|Passionate
+ * @returns {React.Fragment} Form to update the user type
+ */
 function FormUpdateUserType(props:FormUpdateUserTypeParams) {
 
     const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
     const auth = getAuth();
 
     const [loading, setLoading] = useState(false);

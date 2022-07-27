@@ -1,16 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     ActionIcon,
-    Box,
-    Button, Grid,
     Group,
-    Text, TextInput
+    Text,
+    TextInput
 
 } from "@mantine/core";
 import {getFirestore, doc, updateDoc } from "firebase/firestore";
-//import {t} from "i18next";
 import { getAuth, updateEmail } from "firebase/auth";
-import {string} from "zod";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
 
@@ -18,6 +15,11 @@ interface FormUpdateEmailParams {
     email : string
 }
 
+/**
+ * @param {FormUpdateEmailParams} props - Object with parameters
+ * @param {string} props.email - The actual user email address
+ * @returns {React.Fragment} Form to update the user email address
+ */
 function FormUpdateEmail(props:FormUpdateEmailParams) {
 
     const db = getFirestore();

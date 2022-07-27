@@ -1,28 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     ActionIcon,
-    Box,
-    Button, Grid,
-    Group, PasswordInput,
-    Text, TextInput
-
+    Group,
+    PasswordInput,
 } from "@mantine/core";
-import {getFirestore, doc, updateDoc } from "firebase/firestore";
-//import {t} from "i18next";
+import {getFirestore} from "firebase/firestore";
 import { getAuth, updatePassword } from "firebase/auth";
-import {string} from "zod";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
 
-interface FormUpdatePasswordParams {
-
-}
-
-function FormUpdatePassword(props:FormUpdatePasswordParams) {
+/**
+ * @returns {React.Fragment} Form to update the user password
+ */
+function FormUpdatePassword() {
 
     const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
     const auth = getAuth();
 
     const user = auth.currentUser;

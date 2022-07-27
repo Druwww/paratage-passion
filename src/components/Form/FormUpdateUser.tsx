@@ -3,34 +3,35 @@ import {
     Box,
     Button,
     Group,
-    Text
-
 } from "@mantine/core";
 import {getFirestore, doc, getDoc, setDoc} from "firebase/firestore";
-//import {t} from "i18next";
 import { getAuth, signOut } from "firebase/auth";
-import {string} from "zod";
 import FormUpdateEmail from "./FormUpdateEmail";
 import FormUpdatePassword from "./FormUpdatePassword";
 import FormUpdateBirthday from "./FormUpdateBirthday";
 import FormUpdateHobbies from "./FormUpdateHobbies";
 import FormUpdateUserType from "./FormUpdateUserType";
+import firebase from "firebase/compat";
+import Timestamp = firebase.firestore.Timestamp;
 
 interface FormUpdateUserParams {
     close() : void
 }
 
+/**
+ * @param {FormUpdateUserParams} props - Object with parameters
+ * @param {string[]} props.close - Function to trigger on close
+ * @returns {React.Fragment} Form to update the all the user information
+ */
 function FormUpdateUser(props:FormUpdateUserParams) {
 
     const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
     const auth = getAuth();
 
     const user = auth.currentUser;
 
     const [loading, setLoading] = useState(false);
-    const [userData, setUserData] = useState<{email : string, birthday : Date, hobbies : string[], type : string} | null>(null)
+    const [userData, setUserData] = useState<{email : string, birthday : Timestamp, hobbies : string[], type : string} | null>(null)
 
     const askSignOut = async () => {
         setLoading(true)

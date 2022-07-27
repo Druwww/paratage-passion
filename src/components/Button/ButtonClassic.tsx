@@ -11,6 +11,14 @@ interface ButtonClassicParams {
     action() : any
 }
 
+/**
+ * @param {ButtonClassicParams} props - Object with parameters
+ * @param {string}  [props.id] - Components ID.
+ * @param {string} props.name - Text display in the button
+ * @param {string} [props.color] - Button Color
+ * @param {function} props.action - To trigger when clicked
+ * @returns {React.Fragment} - Classic action button
+ */
 function ButtonClassic(props: ButtonClassicParams) {
 
     const navigate = useNavigate();

@@ -9,6 +9,12 @@ interface ButtonNavigationParams {
     path : string
 }
 
+/**
+ * @param {ButtonNavigationParams} props - Object with parameters
+ * @param {string} props.name - Text display in the button
+ * @param {string} props.path - The path to navigate to
+ * @returns {React.Fragment} - A button that change to URL to navigate between pages
+ */
 function ButtonNavigation(props: ButtonNavigationParams) {
 
     const navigate = useNavigate();

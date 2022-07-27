@@ -6,7 +6,9 @@ import {useTranslation} from "react-i18next";
 import {useDocumentTitle} from "@mantine/hooks";
 import {t} from "i18next";
 
-
+/**
+ * @returns {React.Fragment} - A button to switch between languages (ENG/FR)
+ */
 function LanguageSwap() {
 
     const { i18n } = useTranslation();

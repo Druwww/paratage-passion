@@ -20,6 +20,18 @@ interface FormWelcomeParams {
 
 
 
+/**
+ * @param {FormWelcomeParams} props - Object with parameters
+ * @param {Object}  props.form - Object with all form information
+ * @param {string} props.form.Title - Form title
+ * @param {string} props.form.Email - Form email
+ * @param {string} props.form.ErrorEmail - Form email error message
+ * @param {string} props.form.CheckBox - If the user want to be in the newsletter
+ * @param {string} props.form.Validation - Validation button text
+ * @param {string} props.personType - The form user type (Adventurer|Passionate)
+ * @param {MantineColor} [props.color] - Form border color
+ * @returns {React.Fragment} - The form to subscribe to the newsletter
+ */
 function FormWelcome(props:FormWelcomeParams) {
 
     const form = useForm({

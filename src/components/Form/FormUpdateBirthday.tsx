@@ -5,21 +5,25 @@ import {
     Text,
 } from "@mantine/core";
 import {getFirestore, doc, updateDoc } from "firebase/firestore";
-//import {t} from "i18next";
 import { getAuth} from "firebase/auth";
 import {useForm} from "@mantine/form";
 import {Send} from "tabler-icons-react";
 import {DatePicker} from "@mantine/dates";
+import firebase from "firebase/compat";
+import Timestamp = firebase.firestore.Timestamp;
 
 interface FormUpdateBirthdayParams {
-    birthday : any
+    birthday : Timestamp
 }
 
+/**
+ * @param {FormUpdateBirthdayParams} props - Object with parameters
+ * @param {Timestamp} props.birthday - The actual user birthday
+ * @returns {React.Fragment} Form to update the user birthday
+ */
 function FormUpdateBirthday(props:FormUpdateBirthdayParams) {
 
     const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
     const auth = getAuth();
 
     const [loading, setLoading] = useState(false);

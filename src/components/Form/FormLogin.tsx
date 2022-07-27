@@ -1,29 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Button,
-    Group, MultiSelect,
+    Group,
     PasswordInput,
     TextInput,
-    Text, Title
+    Text
 
 } from "@mantine/core";
 import {useForm} from "@mantine/form";
 import {getFirestore, doc, getDoc, setDoc} from "firebase/firestore";
-import notificationSuccess from "../Notification/NotificationSuccess";
-//import {t} from "i18next";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import {string} from "zod";
 
 interface FormLoginParams {
     validate() : void
 }
 
+/**
+ * @param {FormLoginParams} props - Object with parameters
+ * @param {Function} props.validate - The function to call when the login is completed.
+ * @returns {React.Fragment} Form to login as a classic user
+ */
 function FormLogin(props:FormLoginParams) {
-
-    const db = getFirestore();
-    //const { colorScheme } = useMantineColorScheme();
-    //const dark = colorScheme === 'dark';
 
     const [loading, setLoading] = useState(false);
 
@@ -52,8 +50,6 @@ function FormLogin(props:FormLoginParams) {
                 setError(error.message);
                 setLoading(false)
             });
-
-
     }
 
     return (

@@ -3,6 +3,9 @@ import React from 'react';
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
 import { Sun, MoonStars } from 'tabler-icons-react';
 
+/**
+ * @returns {React.Fragment} - A button that switch between dark and light mode
+ */
 function DarkLightSwitch() {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
