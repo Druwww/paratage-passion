@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-//import {useTranslation} from "react-i18next";
 import {Divider, Grid, Space, Title, useMantineTheme, Modal} from "@mantine/core";
 import {Xwrapper} from "react-xarrows";
 import pictures from "../assets/pictures/links.json";

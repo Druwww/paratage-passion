@@ -11,6 +11,14 @@ interface PaperTextWelcomeParams {
     animated?: string
 }
 
+/**
+ * @param {PaperTextWelcomeParams} props - Object with parameters
+ * @param {string}  [props.id] - Component id
+ * @param {string}  props.data - Component text to display
+ * @param {string}  [props.color] - Optional background color
+ * @param {string}  [props.animated] - Tell in what direction the text will be translated (left|right)
+ * @returns {React.Fragment} - Paper with text for the welcome page
+ */
 function PaperTextWelcome(props:PaperTextWelcomeParams) {
 
     const updateXarrow = useXarrow()

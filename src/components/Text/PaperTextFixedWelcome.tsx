@@ -1,7 +1,6 @@
 // @ts-ignore
 import React, {useEffect} from 'react';
 import {Paper, Text} from "@mantine/core";
-import {useSpring, animated} from "react-spring";
 import {useXarrow} from "react-xarrows";
 
 interface PaperTextFixedWelcomeParams {
@@ -10,6 +9,13 @@ interface PaperTextFixedWelcomeParams {
     color?: string
 }
 
+/**
+ * @param {PaperTextFixedWelcomeParams} props - Object with parameters
+ * @param {string}  [props.id] - Component id
+ * @param {string}  props.data - Component text to display
+ * @param {string}  [props.color] - Optional background color
+ * @returns {React.Fragment} - Paper with text for the welcome page
+ */
 function PaperTextFixedWelcome(props:PaperTextFixedWelcomeParams) {
 
     const updateXarrow = useXarrow()

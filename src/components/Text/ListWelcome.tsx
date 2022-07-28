@@ -6,6 +6,12 @@ interface ListWelcomeParams {
     data : string[]
 }
 
+/**
+ * @param {ListWelcomeParams} props - Object with parameters
+ * @param {string}  [props.id] - Component id
+ * @param {string[]}  props.data - all the elements to display in the list
+ * @returns {React.Fragment} - List of string for the welcome page
+ */
 function ListWelcome(props:ListWelcomeParams) {
 
     return (

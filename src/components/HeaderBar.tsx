@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Group, Grid, Text, Avatar, Space, Divider} from '@mantine/core';
+import {Group, Grid, Text, Avatar, Space} from '@mantine/core';
 
 import {useTranslation} from "react-i18next";
 import LanguageSwap from "./Button/LanguageSwap";
